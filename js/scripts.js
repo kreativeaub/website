@@ -3,18 +3,19 @@ function initEndor() {
   // preload------------------
 
   firstLoad();
+  initpageloadAnimation();
+  nc();
 
   function firstLoad() {
     TweenMax.to(".ml-mask", 1.7, {
       xPercent: 100,
       repeat: 0,
       yoyo: false,
-      repeatDelay: 0.5,
+      repeatDelay: 0.9,
       ease: Linear.easeNone,
       onComplete: function () {
-        $(".main-loader").fadeOut(1300);
-        initpageloadAnimation();
-        nc();
+        $(".main-loader").fadeOut(1200);
+
       },
     });
   }
@@ -556,7 +557,7 @@ function initpageloadAnimation() {
           opacity: 1,
           ease: Expo.easeInOut,
         });
-      }, 80 * ac);
+      }, 60 * ac);
     });
   }, 600);
   $(".hov_box").each(function (ac2) {
@@ -748,3 +749,5 @@ if (trueMobile) {
 document.addEventListener("gesturestart", function (e) {
   e.preventDefault();
 });
+
+
